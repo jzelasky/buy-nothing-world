@@ -1,0 +1,13 @@
+:root {
+    --dark-green: #1A2915;
+    --sea-green: #3E885B;
+    --lt-green: #85BDA6;
+    --beige: #F5EDF0;
+}
+
+.headerStyles {
+    background-color: var(--sea-green);
+    font-size: 50px;
+    color: var(--beige);
+    text-shadow: 1px 1px 5px var(--dark-green);
+}
