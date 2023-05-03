@@ -20,7 +20,9 @@ export default function Container() {
         if (currentPage === 'Profile'){
             return <Profile />;
         }
+        if (currentPage === 'Login'){
         return <Login />;
+        }
     }
 
     const handlePageChange = (page) => setCurrentPage(page);
@@ -33,8 +35,10 @@ export default function Container() {
             <Navigation currentPage={currentPage} handlePageChange={handlePageChange}/>
             </div>
 
+            <div className='pageStyles'>
             {renderPage()}
-            
+            </div>
+
             <Footer/>
         </div>
     )

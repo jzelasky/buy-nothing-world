@@ -19,7 +19,13 @@
     font-size: 20px;
 }
 
+.pageStyles {
+    background-color: var(--beige);
+    color: var(--dark-green);
+}
+
 .footerStyles {
     background-color: var(--sea-green);
     height: 150px;
 }
+
