@@ -5,9 +5,17 @@
     --beige: #F5EDF0;
 }
 
+
 .headerStyles {
     background-color: var(--sea-green);
     font-size: 50px;
     color: var(--beige);
     text-shadow: 1px 1px 5px var(--dark-green);
+    margin-bottom: 0;
 }
+
+.navStyles {
+    background-color: var(--lt-green);
+    font-size: 20px;
+}
+

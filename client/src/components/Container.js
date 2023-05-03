@@ -3,6 +3,9 @@ import Navigation from './Navigation';
 import Header from './Header';
 import Footer from './Footer';
 import Home from './pages/Home';
+import About from './pages/About';
+import Profile from './pages/Profile';
+import Login from './pages/Login';
 
 export default function Container() {
     const [currentPage, setCurrentPage ] = useState('Home');
@@ -11,6 +14,13 @@ export default function Container() {
         if (currentPage === 'Home'){
             return <Home />;
         }
+        if (currentPage === 'About'){
+            return <About />;
+        }
+        if (currentPage === 'Profile'){
+            return <Profile />;
+        }
+        return <Login />;
     }
 
     const handlePageChange = (page) => setCurrentPage(page);
@@ -19,7 +29,9 @@ export default function Container() {
         <div>
             <Header/>
 
+            <div className='p-2 d-flex justify-content-end navStyles'>
             <Navigation currentPage={currentPage} handlePageChange={handlePageChange}/>
+            </div>
 
             {renderPage()}
             
