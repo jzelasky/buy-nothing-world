@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Navigation from './Navigation';
-import Header from './Header';
-import Footer from './Footer';
+import Navigation from './components/Navigation';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Profile from './pages/Profile';
