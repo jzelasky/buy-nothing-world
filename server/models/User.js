@@ -19,10 +19,10 @@ const userSchema = new Schema ({
         required: true,
         minlength: 8,
     },
-    posts: [
+    items: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'Post'
+            ref: 'Item'
         },
     ],
 });
