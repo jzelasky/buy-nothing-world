@@ -63,10 +63,10 @@ const App = () => {
                         path='/profile'
                         element={<Profile />}
                     />
-                    {/* <Route 
+                    {<Route 
                         path='/items/:itemId'
                         element={<SingleItem />}
-                    /> */}
+                    />}
                 </Routes>
                 <Footer />
             </Router>
