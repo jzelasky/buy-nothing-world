@@ -32,9 +32,35 @@ h1 {
     text-shadow: 0 0 5px var(--beige);
 }
 
-.pageStyles {
+.loginSignup {
     background-color: var(--beige);
-    color: var(--dark-green);
+}
+.card {
+    box-shadow: 0 0 5px var(--dark-green);
+    width: 60%;
+}
+.card-header {
+    background-color: var(--sea-green);
+    color: var(--beige);
+    text-shadow: 0 0 5px var(--dark-green);
+}
+.card-body {
+    background-color: var(--lt-green);
+}
+.form-input {
+    border-radius: 5px;
+    width: 75%;
+    background-color: var(--beige);
+}
+.btn {
+    background-color: var(--sea-green);
+    color: var(--beige);
+    box-shadow: 1px 1px 3px var(--dark-green);
+}
+.btn:hover {
+    box-shadow: 0 0 0 var(--beige);
+    background-color: var(--sea-green);
+    color: var(--beige)
 }
 
 .footerStyles {
