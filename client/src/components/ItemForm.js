@@ -33,7 +33,7 @@ export default function ItemForm () {
             const { data } = await addItem({
                 variables: {
                     itemText,
-                    itemAuthor: Auth.getProfile.data.username,
+                    itemAuthor: Auth.getProfile().data.username,
                 },
             });
             console.log(data);
