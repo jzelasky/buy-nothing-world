@@ -14,13 +14,13 @@ const typeDefs = gql`
         itemText: String
         itemAuthor: String
         createdAt: String
-        comments: [Comment]!
+        responses: [Response]!
     }
 
-    type Comment {
+    type Response {
         _id: ID
-        commentText: String
-        commentAuthor: String
+        responseText: String
+        responseAuthor: String
         createdAt: String
     }
 
@@ -40,10 +40,10 @@ const typeDefs = gql`
         addUser(username: String!, email: String!, password: String!): Auth
         login(email: String, password: String!): Auth
         addItem(itemText: String!, itemAuthor: String!): Item
-        addComment(
+        addResponse(
             itemId: ID!
-            commentText: String!
-            commentAuthor: String!
+            responseText: String!
+            responseAuthor: String!
         ): Item
         removeItem(itemId: ID!): Item
     }

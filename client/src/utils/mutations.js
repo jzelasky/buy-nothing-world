@@ -31,32 +31,32 @@ export const ADD_ITEM = gql`
       itemText
       itemAuthor
       createdAt
-      comments {
+      responses {
         _id
-        commentText
+        responseText
       }
     }
   }
 `;
 
-export const ADD_COMMENT = gql`
-  mutation addComment(
+export const ADD_RESPONSE = gql`
+  mutation addResponse(
     $itemId: ID!
-    $commentText: String!
-    $commentAuthor: String!
+    $responseText: String!
+    $responseAuthor: String!
   ) {
-    addComment(
+    addResponse(
       itemId: $itemId
-      commentText: $commentText
-      commentAuthor: $commentAuthor
+      responseText: $responseText
+      responseAuthor: $responseAuthor
     ) {
       _id
       itemText
       itemAuthor
       createdAt
-      comments {
+      responses {
         _id
-        commentText
+        responseText
         createdAt
       }
     }

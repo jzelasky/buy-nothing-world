@@ -33,9 +33,9 @@ export const QUERY_SINGLE_ITEM = gql`
             itemText
             itemAuthor
             createdAt
-            commets {
+            responses {
                 _id
-                commentText
+                responseText
                 createdAt
             }
         }

@@ -52,17 +52,17 @@ const resolvers = {
 
             return item;
         },
-        addComment: async (parent, { itemId, commentText, commentAuthor }) => {
+        addResponse: async (parent, { itemId, responseText, responseAuthor }) => {
             return Item.findOneAndUpdate(
                 { _id: itemId },
-                { $addToSet: { comments: { commentText, commentAuthor }}},
+                { $addToSet: { responses: { responseText, responseAuthor }}},
                 { new: true, runValidators: true}, 
             )
         },
         removeItem: async (parent, { itemId }) => {
             return Item.findOneAndUpdate(
                 { _id: itemId },
-                { $pull: { comments: { _id: commentId }}},
+                { $pull: { responses: { _id: responseId }}},
                 { new: true }
             )
         }
