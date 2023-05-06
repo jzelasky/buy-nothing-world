@@ -36,7 +36,7 @@ export default function ItemForm () {
                     itemAuthor: Auth.getProfile.data.username,
                 },
             });
-
+            console.log(data);
             setItemText('');
         } catch (err) {
             console.error(err);
