@@ -11,7 +11,7 @@ export default function Home () {
     const items = data?.items || [];
     
     return (
-        <main>
+        <main className='homeStyles'>
             <div>
                 <ItemForm />
             </div>

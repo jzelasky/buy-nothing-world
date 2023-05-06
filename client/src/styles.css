@@ -40,10 +40,12 @@ h1 {
 .loginSignup {
     background-color: var(--beige);
 }
+.LScard {
+    width: 60%;
+}
+
 .card {
     box-shadow: 0 0 5px var(--dark-green);
-    width: 60%;
-    margin: 9% 0 17% 0;
 }
 .card-header {
     background-color: var(--sea-green);
@@ -67,6 +69,29 @@ h1 {
     box-shadow: 0 0 0 var(--beige);
     background-color: var(--sea-green);
     color: var(--beige)
+}
+
+.homeStyles {
+    background-color: var(--beige);
+}
+
+.itemFormStyles {
+    background-color: var(--lt-green);
+    border-radius: 10px;
+    box-shadow: 0 0 5px var(--dark-green);
+}
+h5 {
+    color: var(--dark-green);
+}
+textarea {
+    background-color: var(--beige);
+}
+.itemContent {
+    background-color: var(--beige);
+    border-radius: 10px;
+}
+.itemList {
+    width: 80%;
 }
 
 .footerStyles {

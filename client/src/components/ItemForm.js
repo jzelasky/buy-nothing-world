@@ -53,8 +53,8 @@ export default function ItemForm () {
     }
 
     return (
-        <div>
-            <h3>What are you getting rid of?</h3>
+        <div className='p-3 m-3 itemFormStyles'>
+            <h5>What are you getting rid of?</h5>
 
             {Auth.loggedIn() ? (
                 <>

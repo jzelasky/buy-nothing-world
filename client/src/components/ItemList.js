@@ -7,19 +7,24 @@ export default function ItemList ({ items, title}) {
     }
 
     return (
-        <div>
+        <div className='m-3 d-flex flex-column align-items-center'>
             <h3>{title}</h3>
             {items && items.map((item) => (
-                <div key={item._id} className='card'>
+                <div key={item._id} className='card itemList mt-4'>
                     <h4 className='card-header'>
-                        {item.itemAuthor} <br />
+                        "Title"
                     </h4>
                     <div className='card-body'>
-                        <p>{item.itemText}</p>
-                    </div>
-                    <Link className='btn btn-block' to={`/items/${item._id}`}>
+                        <div className='p-2 itemContent'>
+                            <p>{item.itemText}</p>
+                            <p>Posted by: {item.itemAuthor}</p>
+                        </div>
+                        <div className='d-flex justify-content-center'>
+                        <Link className='btn m-2' to={`/items/${item._id}`}>
                         See more
-                    </Link>
+                        </Link>
+                        </div>
+                    </div> 
                 </div>
             ))}
         </div>

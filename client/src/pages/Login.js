@@ -43,7 +43,7 @@ const Login = (props) => {
   return (
     <main className="p-5 loginSignup">
       <div className="d-flex justify-content-center">
-        <div className="card">
+        <div className="card LScard">
           <h4 className="card-header">Login</h4>
           <div className="card-body">
             {data ? (
