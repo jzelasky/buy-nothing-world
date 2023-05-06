@@ -20,6 +20,10 @@ h1 {
 .nav-item {
     font-size: 21px;
 }
+.nav-link {
+    color: var(--beige);
+    text-shadow: 0 0 5px var(--dark-green);
+}
 .nav-link:link {
     color: var(--beige);
     text-shadow: 0 0 5px var(--dark-green);
@@ -29,6 +33,7 @@ h1 {
     text-shadow: 0 0 5px var(--dark-green);
 }
 .nav-link:hover {
+    color: var(--beige);
     text-shadow: 0 0 5px var(--beige);
 }
 
@@ -38,6 +43,7 @@ h1 {
 .card {
     box-shadow: 0 0 5px var(--dark-green);
     width: 60%;
+    margin: 9% 0 17% 0;
 }
 .card-header {
     background-color: var(--sea-green);

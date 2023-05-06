@@ -29,13 +29,15 @@ export default function Header() {
               About
               </Link>
             </li>
-            <li>
+            <li className='nav-item'>
               <Link to='/profile' className='nav-link'>
                 My profile
               </Link>
             </li>
-            <li onClick={logout} className='nav-item'>
+            <li className='nav-item'>
+              <div onClick={logout} className='nav-link' >
               Logout
+              </div>
             </li>
             </ul>
           </>
