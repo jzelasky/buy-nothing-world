@@ -14,20 +14,21 @@ export default function Header() {
     <nav className='navbar headerStyles'>
         <h1 className='headerStyles p-3'>Buy Nothing World</h1>   
       
-      <ul className='nav'>
-        <li className='nav-item'>
-          <Link to='/' className='nav-link active'>
-            Home
-          </Link>
-        </li>
-        <li className='nav-item'>
-          <Link to='/about' className='nav-link'>
-            About
-          </Link>
-        </li>
+      
         
         {Auth.loggedIn() ? (
           <>
+          <ul className='nav'>
+            <li className='nav-item'>
+              <Link to='/' className='nav-link active'>
+                Home
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link to='/about' className='nav-link'>
+              About
+              </Link>
+            </li>
             <li>
               <Link to='/profile' className='nav-link'>
                 My profile
@@ -36,23 +37,34 @@ export default function Header() {
             <li onClick={logout} className='nav-item'>
               Logout
             </li>
+            </ul>
           </>
         ) : (
           <>
-            
+          <ul className='nav'>
             <li className='nav-item'>
-              <Link to='/login'>
+              <Link to='/' className='nav-link active'>
+              Home
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link to='/about' className='nav-link'>
+                About
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link to='/login' className='nav-link'>
                 Login
               </Link>
             </li>
             <li className='nav-item'>
-            <Link to="/signup">
+              <Link to="/signup" className='nav-link'>
               Signup
-            </Link>
+              </Link>
             </li>
+            </ul>
           </>
         )}
-      </ul>
     </nav>
   );
 }

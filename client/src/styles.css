@@ -17,9 +17,19 @@ h1 {
     text-shadow: 1px 1px 5px var(--dark-green);
 }
 
-.navStyles {
-    background-color: var(--lt-green);
-    font-size: 20px;
+.nav-item {
+    font-size: 21px;
+}
+.nav-link:link {
+    color: var(--beige);
+    text-shadow: 0 0 5px var(--dark-green);
+}
+.nav-link:visited {
+    color: var(--beige);
+    text-shadow: 0 0 5px var(--dark-green);
+}
+.nav-link:hover {
+    text-shadow: 0 0 5px var(--beige);
 }
 
 .pageStyles {
