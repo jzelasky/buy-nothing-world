@@ -25,18 +25,25 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_ITEM = gql`
-  mutation addItem($itemText: String!, $itemAuthor: String!) {
-    addItem(itemText: $itemText, itemAuthor: $itemAuthor) {
-      _id
-      itemText
-      itemAuthor
-      createdAt
-      responses {
+  mutation addItem(
+    $itemText: String!, 
+    $itemAuthor: String!
+    ) {
+      addItem(
+        itemText: $itemText, 
+        itemAuthor: $itemAuthor
+      ) {
         _id
-        responseText
+        itemText
+        itemAuthor
+        createdAt
+        responses {
+          _id
+          responseText
+          createdAt
+        }
       }
     }
-  }
 `;
 
 export const ADD_RESPONSE = gql`

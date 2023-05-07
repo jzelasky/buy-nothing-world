@@ -9,6 +9,8 @@ import { QUERY_ITEMS } from '../utils/queries';
 export default function Home () {
     const { loading, data } = useQuery(QUERY_ITEMS);
     const items = data?.items || [];
+
+    console.log(items);
     
     return (
         <main className='homeStyles'>

@@ -98,6 +98,11 @@ textarea {
     background-color: var(--beige);
 }
 
+.profileStyles {
+    background-color: var(--beige);
+    color: var(--dark-green);
+}
+
 .footerStyles {
     background-color: var(--sea-green);
     height: 150px;
