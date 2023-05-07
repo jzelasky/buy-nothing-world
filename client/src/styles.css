@@ -94,6 +94,10 @@ textarea {
     width: 80%;
 }
 
+.singleItemStyles {
+    background-color: var(--beige);
+}
+
 .footerStyles {
     background-color: var(--sea-green);
     height: 150px;

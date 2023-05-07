@@ -21,18 +21,20 @@ export default function SingleItem () {
         return <div>Loading...</div>;
     }
     return (
-        <div>
-            <h3 className='card-header'>
-                {item.itemAuthor} <br />
-                <span> posted this item on {item.createdAt}</span>
-            </h3>
-            <div className=''>
-                {item.itemText}
+        <div className='p-5 singleItemStyles'>
+            <div className='card'>
+                <h3 className='card-header'>
+                    "Title"
+                </h3>
+                <div className='card-body'>
+                    <p>{item.itemText}</p>
+                    <p>Posted by {item.itemAuthor} on {item.createdAt}.</p>
+                </div>
             </div>
-            <div>
+            <div className='m-3'>
                 <ResponseList responses={item.responses} />
             </div>
-            <div>
+            <div className='m-3'>
                 <ResponseForm responseId={item._id} />
             </div>
         </div>

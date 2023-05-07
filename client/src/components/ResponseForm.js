@@ -69,7 +69,7 @@ export default function ResponseForm ({ itemId }) {
             ) : (
                 <p>
                     You need to be logged in to respond. Please {' '}
-                    <Link to="/login">login</Link> or
+                    <Link to="/login">login</Link> or {' '}
                     <Link to="/signup">signup.</Link>
                 </p>
             )}
