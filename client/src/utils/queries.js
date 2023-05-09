@@ -38,6 +38,7 @@ export const QUERY_SINGLE_ITEM = gql`
             responses {
                 _id
                 responseText
+                responseAuthor
                 createdAt
             }
         }

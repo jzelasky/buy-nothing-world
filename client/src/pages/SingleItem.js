@@ -40,25 +40,26 @@ export default function SingleItem () {
         return <div>Loading...</div>;
     }
     return (
-        <div className='p-5 singleItemStyles'>
+        <div className='p-5 bg-custom-b text-custom-dk'>
             <div className='card'>
-                <h3 className='card-header'>
+                <h3 className='card-header bg-custom-med text-custom-lt'>
                     {item.itemTitle}
                 </h3>
-                <div className='card-body'>
-                    <p>{item.itemText}</p>
-                    <p>Posted by {item.itemAuthor} on {item.createdAt}.</p>
-                    {Auth.getProfile().data.username === item.itemAuthor ? (
-                        <>
-                        <button onClick={handleRemoveItem} className='btn m-2'>
-                            Remove Post
-                        </button>
-                        </>
-                    ) : (
-                        <>
-                        </>
-                    )}  
-                    
+                <div className='card-body bg-custom-lt'>
+                    <div className='bg-custom-b p-2 br'>
+                        <p>{item.itemText}</p>
+                        <p>Posted by {item.itemAuthor} on {item.createdAt}.</p>
+                    </div>
+                        {Auth.getProfile().data.username === item.itemAuthor ? (
+                            <>
+                                <button onClick={handleRemoveItem} className='btn m-2'>
+                                Remove Post
+                                </button>
+                            </>
+                        ) : (
+                            <>
+                            </>
+                        )}  
                 </div>
             </div>
             <div className='m-3'>

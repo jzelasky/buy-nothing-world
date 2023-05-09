@@ -44,23 +44,25 @@ export default function ResponseForm ({ itemId }) {
 
             {Auth.loggedIn() ? (
                 <>
-                    <p className={`${ characterCount === 280 || error ? 'text-danger' : ''}`}>
-                        Character Count: {characterCount}/280
-                        {error && <span>{error.message}</span>}
-                    </p>
+                    
                     <form onSubmit={handleFormSubmit}>
-                        <div>
+                        <div className='bg-custom-lt p-2 br'>
                             <textarea
                                 name='responseText'
                                 placeholder='Response'
                                 value={responseText}
-                                className='form-input w-100'
+                                className='form-input w-100 bg-custom-b'
                                 onChange={handleChange}>
                             </textarea>
+                        
+                        <small className={`text-custom-dk ${ characterCount === 280 || error ? 'text-danger' : ''}`}>
+                            Character Count: {characterCount}/280
+                            {error && <span>{error.message}</span>}
+                        </small>
                         </div>
                         <div>
-                            <button className="btn btn-block" type='submit'>
-                                Add Response
+                            <button className="btn btn-block m-3" type='submit'>
+                                Submit
                             </button>
                         </div>
                     </form>

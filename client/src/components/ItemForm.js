@@ -60,34 +60,37 @@ export default function ItemForm () {
     }
 
     return (
-        <div className='p-3 m-3 itemFormStyles'>
+        <div className='p-3 m-3 itemFormStyles bg-custom-lt text-custom-dk br'>
             <h5>What are you getting rid of?</h5>
 
             {Auth.loggedIn() ? (
                 <>
-                    <p className={`${characterCount === 280 || error ? 'text-danger' : ''}`}>
-                        Character Count: {characterCount}/280
-                    </p>
+                    
                     <form onSubmit={handleFormSubmit}>
                         <div>
                             <input
                                 name="itemTitle"
                                 placeholder="Title"
                                 value={itemTitle}
-                                className='form-input m-1 w-100'
+                                className='form-input m-1 w-100 bg-custom-b'
                                 onChange={handleChange}>
                             </input>
                             <textarea
                                 name="itemText"
                                 placeholder="Description"
                                 value={itemText}
-                                className='form-input m-1 w-100'
+                                className='form-input mx-1 w-100 bg-custom-b'
                                 onChange={handleChange}>
                             </textarea>
                         </div>
-                        <div className=''>
-                            <button className='btn btn-block' type='submit'>
-                                Add Item
+                        <div className='mx-2'>
+                            <small className={`${characterCount === 280 || error ? 'text-danger' : ''}`}>
+                                Character Count: {characterCount}/280
+                            </small>
+                        </div>
+                        <div className='m-2'>
+                            <button className='btn btn-block bg-custom-med' type='submit'>
+                                Submit
                             </button>
                         </div>
                         {error && (
@@ -99,9 +102,9 @@ export default function ItemForm () {
                 </>
             ) : (
                 <>
-                    You need to be logged in to post items. Please 
-                    <Link to="/login">login </Link>or 
-                    <Link to="/signup">signup.</Link>
+                    You need to be logged in to post items. Please {` `}
+                    <Link to="/login">login</Link>{` `}or{` `}
+                    <Link to="/signup">signup</Link>.
                 </>
             )}
         </div>

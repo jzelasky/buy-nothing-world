@@ -37,11 +37,11 @@ export default function Signup() {
     }
   }
   return (
-    <main className="p-5 loginSignup">
+    <main className="p-5 bg-custom-b">
       <div className="d-flex justify-content-center">
-        <div className="card">
-          <h4 className="card-header">Sign Up</h4>
-          <div className="card-body">
+        <div className="card signupCard">
+          <h4 className="card-header bg-custom-med text-custom-lt">Sign Up</h4>
+          <div className="card-body bg-custom-lt">
               {data ? (
                 <p>
                   Success! You may now head{' '}
@@ -50,7 +50,7 @@ export default function Signup() {
               ) : (
                  <form onSubmit={handleFormSubmit} className='d-flex flex-column align-items-center'>
                     <input
-                      className="form-input m-2"
+                      className="form-input m-2 bg-custom-b"
                       placeholder="Username"
                       name="username"
                       type="text"
@@ -58,7 +58,7 @@ export default function Signup() {
                       onChange={handleChange}
                     />
                     <input
-                      className="form-input m-2"
+                      className="form-input m-2 bg-custom-b"
                       placeholder="Email"
                       name="email"
                       type="email"
@@ -66,7 +66,7 @@ export default function Signup() {
                       onChange={handleChange}
                     />
                     <input
-                    className="form-input m-2"
+                    className="form-input m-2 bg-custom-b"
                     placeholder="Password"
                     name="password"
                     type="password"
@@ -74,7 +74,7 @@ export default function Signup() {
                     onChange={handleChange}
                     />
                     <button
-                      className="btn btn-block btn-sm"
+                      className="btn btn-block btn-sm bg-custom-med text-custom-lt"
                       style={{ cursor: 'pointer' }}
                       type="submit"
                     >

@@ -13,11 +13,11 @@ export default function Home () {
     console.log(items);
     
     return (
-        <main className='homeStyles'>
+        <main className='p-1 bg-custom-b text-custom-dk'>
             <div>
                 <ItemForm />
             </div>
-            <div>
+            <div className='mb-5'>
                 {loading ? (
                     <div>Loading...</div>
                 ) : (

@@ -5,6 +5,8 @@ export default function ResponseList ({ responses = [] }) {
         return <h3>No Responses Yet</h3>;
     }
 
+    console.log(responses)
+
     return (
         <>
             <h3>
@@ -12,16 +14,15 @@ export default function ResponseList ({ responses = [] }) {
             </h3>
             <div>
                 {responses && responses.map((response) => (
-                    <div key={response._id}>
-                        <h5 className='card-header'>
-                            {response.responseAuthor} reponded{' '}
-                            <span>
-                                on {response.createdAt}
-                            </span>
-                        </h5>
-                        <p className='card-body'>
+                    <div key={response._id} className='bg-custom-lt p-3 mt-3 br'>
+                        <div className='text-custom-dk'>
+                        <p >
                             {response.responseText}
                         </p>
+                        <p>
+                            From {response.responseAuthor} onSubmit {response.createdAt}
+                        </p>
+                        </div>
                     </div>
                 ))}
             </div>

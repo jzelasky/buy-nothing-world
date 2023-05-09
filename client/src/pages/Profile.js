@@ -19,17 +19,17 @@ export default function Profile () {
     }
 
     return (
-        <div className='p-5 profileStyles'>
+        <div className='p-5 profileStyles bg-custom-b'>
             <div className='card'>
                 <div>
-                    <h2 className='card-header'>Your profile</h2>
+                    <h2 className='card-header bg-custom-med text-custom-lt'>Your profile</h2>
                 </div>
-                <div className='card-body'>
-                    <p>Username: {Auth.getProfile().data.username}</p>
-                    <p>Email: {Auth.getProfile().data.email}</p>
+                <div className='card-body bg-custom-lt'>
+                    <p className='bg-custom-b p-2 br'><strong>Username:</strong> {Auth.getProfile().data.username}</p>
+                    <p className='bg-custom-b p-2 br'><strong>Email:</strong> {Auth.getProfile().data.email}</p>
                 </div>
             </div>
-            <div>
+            <div className='text-custom-dk'>
             {loading ? (
                     <div>Loading...</div>
                 ) : (

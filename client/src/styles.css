@@ -1,3 +1,4 @@
+/*COLOR SCHEME*/
 :root {
     --dark-green: #1A2915;
     --sea-green: #3E885B;
@@ -6,17 +7,70 @@
 }
 
 
-.headerStyles {
+/*CUSTOM BACKGROUND COLORS*/
+.bg-custom-dk {
+    background-color: var(--dark-green);
+}
+.bg-custom-med {
     background-color: var(--sea-green);
-    margin-bottom: 0;
+}
+.bg-custom-lt {
+    background-color: var(--lt-green);
+}
+.bg-custom-b {
+    background-color: var(--beige);
 }
 
+/*CUSTOM TEXT COLORS*/ 
+.text-custom-lt {
+    color: var(--beige);
+}
+.text-custom-dk {
+    color: var(--dark-green);
+}
+
+/*CUSTOM BORDER RADIUS*/
+.br {
+    border-radius: 10px;
+}
+
+
+/*TEXT STYLES*/
 h1 {
     font-size: 35px;
-    color: var(--beige);
     text-shadow: 1px 1px 5px var(--dark-green);
 }
+p {
+    font-size: 18px;
+}
 
+
+/*BUTTON STYLES*/
+.btn {
+    background-color: var(--sea-green);
+    color: var(--beige);
+    box-shadow: 1px 1px 3px var(--dark-green);
+}
+.btn:hover {
+    background-color: var(--sea-green);
+    color: var(--beige);
+    box-shadow: 0 0 0 var(--beige);
+}
+
+/*CARD/FORM STYLES*/
+.card {
+    box-shadow: 0 0 5px var(--dark-green);
+}
+.card-header {
+    text-shadow: 0 0 5px var(--dark-green);
+}
+.form-input {
+    border-radius: 5px;
+    width: 75%;
+}
+
+
+/*NAV LINK STYLES*/
 .nav-item {
     font-size: 21px;
 }
@@ -37,74 +91,47 @@ h1 {
     text-shadow: 0 0 5px var(--beige);
 }
 
-.loginSignup {
-    background-color: var(--beige);
-}
-.LScard {
+
+/*LOGIN/SIGNUP STYLES*/
+.loginCard {
     width: 60%;
+    margin-top: 50px;
+    margin-bottom: 150px;
+}
+.signupCard {
+    width: 60%;
+    margin-top: 50px;
+    margin-bottom: 75px;
 }
 
-.card {
-    box-shadow: 0 0 5px var(--dark-green);
-}
-.card-header {
-    background-color: var(--sea-green);
-    color: var(--beige);
-    text-shadow: 0 0 5px var(--dark-green);
-}
-.card-body {
-    background-color: var(--lt-green);
-}
-.form-input {
-    border-radius: 5px;
-    width: 75%;
-    background-color: var(--beige);
-}
-.btn {
-    background-color: var(--sea-green);
-    color: var(--beige);
-    box-shadow: 1px 1px 3px var(--dark-green);
-}
-.btn:hover {
-    box-shadow: 0 0 0 var(--beige);
-    background-color: var(--sea-green);
-    color: var(--beige)
-}
 
-.homeStyles {
-    background-color: var(--beige);
-}
-
+/*HOME STYLES*/
 .itemFormStyles {
-    background-color: var(--lt-green);
-    border-radius: 10px;
     box-shadow: 0 0 5px var(--dark-green);
-}
-h5 {
-    color: var(--dark-green);
-}
-textarea {
-    background-color: var(--beige);
-}
-.itemContent {
-    background-color: var(--beige);
-    border-radius: 10px;
 }
 .itemList {
     width: 80%;
 }
 
-.singleItemStyles {
-    background-color: var(--beige);
+/*ABOUT PAGE STYLES*/
+.about-margin {
+    margin-bottom: 200px;
 }
 
-.profileStyles {
-    background-color: var(--beige);
-    color: var(--dark-green);
-}
-
+/*FOOTER STYLES*/
 .footerStyles {
-    background-color: var(--sea-green);
     height: 150px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 

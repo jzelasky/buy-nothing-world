@@ -11,10 +11,8 @@ export default function Header() {
     Auth.logout();
   }
   return (
-    <nav className='navbar headerStyles'>
-        <h1 className='headerStyles p-3'>Buy Nothing World</h1>   
-      
-      
+    <nav className='navbar bg-custom-med text-custom-lt'>
+        <h1 className='p-3'>Buy Nothing World</h1>   
         
         {Auth.loggedIn() ? (
           <>
