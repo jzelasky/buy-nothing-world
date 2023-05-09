@@ -26,14 +26,17 @@ export const ADD_USER = gql`
 
 export const ADD_ITEM = gql`
   mutation addItem(
+    $itemTitle: String!,
     $itemText: String!, 
     $itemAuthor: String!
     ) {
       addItem(
+        itemTitle: $itemTitle,
         itemText: $itemText, 
         itemAuthor: $itemAuthor
       ) {
         _id
+        itemTitle
         itemText
         itemAuthor
         createdAt

@@ -8,6 +8,7 @@ import { QUERY_ITEMS } from '../utils/queries';
 import Auth from '../utils/auth';
 
 export default function ItemForm () {
+    const [itemTitle, setItemTitle] = useState('');
     const [itemText, setItemText] = useState('');
 
     const [characterCount, setCharacterCount] = useState(0);
@@ -32,11 +33,13 @@ export default function ItemForm () {
         try {
             const { data } = await addItem({
                 variables: {
+                    itemTitle,
                     itemText,
                     itemAuthor: Auth.getProfile().data.username,
                 },
             });
             console.log(data);
+            setItemTitle('');
             setItemText('');
         } catch (err) {
             console.error(err);
@@ -50,6 +53,10 @@ export default function ItemForm () {
             setItemText(value);
             setCharacterCount(value.length);
         }
+        if (name === 'itemTitle') {
+            setItemTitle(value);
+        }
+    
     }
 
     return (
@@ -63,11 +70,18 @@ export default function ItemForm () {
                     </p>
                     <form onSubmit={handleFormSubmit}>
                         <div>
+                            <input
+                                name="itemTitle"
+                                placeholder="Title"
+                                value={itemTitle}
+                                className='form-input m-1 w-100'
+                                onChange={handleChange}>
+                            </input>
                             <textarea
                                 name="itemText"
                                 placeholder="Description"
                                 value={itemText}
-                                className='form-input w-100'
+                                className='form-input m-1 w-100'
                                 onChange={handleChange}>
                             </textarea>
                         </div>

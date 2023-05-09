@@ -12,12 +12,12 @@ export default function ItemList ({ items, title}) {
             {items && items.map((item) => (
                 <div key={item._id} className='card itemList mt-4'>
                     <h4 className='card-header'>
-                        "Title"
+                        {item.itemTitle}
                     </h4>
                     <div className='card-body'>
                         <div className='p-2 itemContent'>
                             <p>{item.itemText}</p>
-                            <p>Posted by: {item.itemAuthor}</p>
+                            <p>Posted by: {item.itemAuthor} on {item.createdAt}</p>
                         </div>
                         <div className='d-flex justify-content-center'>
                         <Link className='btn m-2' to={`/items/${item._id}`}>

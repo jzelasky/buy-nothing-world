@@ -44,7 +44,7 @@ export default function SingleItem () {
         <div className='p-5 singleItemStyles'>
             <div className='card'>
                 <h3 className='card-header'>
-                    "Title"
+                    {item.itemTitle}
                 </h3>
                 <div className='card-body'>
                     <p>{item.itemText}</p>

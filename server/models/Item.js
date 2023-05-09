@@ -4,21 +4,27 @@ const dateFormat = require('../utils/dateFormat');
 //add image section
 
 const itemSchema = new Schema({
+    itemTitle: {
+      type: String,
+      minlength: 1,
+      maxlength: 20,
+      trim: true
+    },
     itemText: {
-        type: String,
-        minlength: 1,
-        maxlength: 280,
-        trim: true,
+      type: String,
+      minlength: 1,
+      maxlength: 280,
+      trim: true,
     },
     itemAuthor: {
-        type: String,
-        required: true,
-        trim: true,
+      type: String,
+      required: true,
+      trim: true,
     },
     createdAt: {
-        type: Date,
-        default: Date.now,
-        get: (timestamp) => dateFormat(timestamp),
+      type: Date,
+      default: Date.now,
+      get: (timestamp) => dateFormat(timestamp),
     },
     responses: [
         {
