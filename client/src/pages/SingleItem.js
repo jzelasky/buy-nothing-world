@@ -1,12 +1,15 @@
 import React from 'react';
 
 import { useParams } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
+import { useMutation, useQuery } from '@apollo/client';
 
 import ResponseList from '../components/ResponseList';
 import ResponseForm from '../components/ResponseForm';
 
+import Auth from '../utils/auth';
+
 import { QUERY_SINGLE_ITEM } from '../utils/queries';
+import { REMOVE_ITEM } from '../utils/mutations';
 
 export default function SingleItem () {
     const { itemId } = useParams();
@@ -17,6 +20,20 @@ export default function SingleItem () {
 
     const item = data?.item || {};
 
+    const [removeItem] = useMutation(REMOVE_ITEM);
+
+    const handleRemoveItem = () => {
+        try {
+            const { data } = removeItem({
+                variables: {
+                    itemId: item.itemId
+                }
+            })
+        } catch (err) {
+            console.error(err);
+        }
+    }
+  
     if (loading) {
         return <div>Loading...</div>;
     }
@@ -29,13 +46,24 @@ export default function SingleItem () {
                 <div className='card-body'>
                     <p>{item.itemText}</p>
                     <p>Posted by {item.itemAuthor} on {item.createdAt}.</p>
+                    {Auth.getProfile().data.username === item.itemAuthor ? (
+                        <>
+                        <button onClick={handleRemoveItem} className='btn m-2'>
+                            Remove Post
+                        </button>
+                        </>
+                    ) : (
+                        <>
+                        </>
+                    )}  
+                    
                 </div>
             </div>
             <div className='m-3'>
                 <ResponseList responses={item.responses} />
             </div>
             <div className='m-3'>
-                <ResponseForm responseId={item._id} />
+                <ResponseForm itemId={item._id} />
             </div>
         </div>
     );

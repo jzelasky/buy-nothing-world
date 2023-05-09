@@ -47,15 +47,32 @@ export const ADD_ITEM = gql`
 `;
 
 export const ADD_RESPONSE = gql`
-  mutation addResponse(
-    $itemId: ID!
-    $responseText: String!
+  mutation AddResponse(
+    $itemId: ID!,
+    $responseText: String!,
     $responseAuthor: String!
   ) {
     addResponse(
-      itemId: $itemId
-      responseText: $responseText
+      itemId: $itemId,
+      responseText: $responseText,
       responseAuthor: $responseAuthor
+    ) {
+      _id
+      itemText
+      responses {
+        responseText
+      }
+    }
+  }
+`;
+
+export const REMOVE_ITEM = gql`
+mutation removeItem(
+  $itemId: ID!
+  ) {
+    removeItem(
+      itemText: $itemText, 
+      itemAuthor: $itemAuthor
     ) {
       _id
       itemText
@@ -68,4 +85,4 @@ export const ADD_RESPONSE = gql`
       }
     }
   }
-`;
+`

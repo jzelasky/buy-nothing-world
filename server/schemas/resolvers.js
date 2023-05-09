@@ -57,7 +57,7 @@ const resolvers = {
                 { _id: itemId },
                 { $addToSet: { responses: { responseText, responseAuthor }}},
                 { new: true, runValidators: true}, 
-            )
+            );
         },
         removeItem: async (parent, { itemId }) => {
             return Item.findOneAndUpdate(

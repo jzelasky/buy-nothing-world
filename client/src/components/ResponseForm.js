@@ -14,10 +14,9 @@ export default function ResponseForm ({ itemId }) {
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-        console.log('hello')
         try {
             const { data } = await addResponse({
-                variable: {
+                variables: {
                     itemId,
                     responseText,
                     responseAuthor: Auth.getProfile().data.username,
