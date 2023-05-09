@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useMutation, useQuery } from '@apollo/client';
 
 import ResponseList from '../components/ResponseList';
@@ -20,15 +21,17 @@ export default function SingleItem () {
 
     const item = data?.item || {};
 
-    const [removeItem] = useMutation(REMOVE_ITEM);
+    const [removeItem, { error }] = useMutation(REMOVE_ITEM);
 
-    const handleRemoveItem = () => {
+    const handleRemoveItem = async () => {
         try {
-            const { data } = removeItem({
+            const { data } = await removeItem({
                 variables: {
-                    itemId: item.itemId
+                    itemId
                 }
-            })
+            });
+            console.log(data);
+            window.location.assign('/');
         } catch (err) {
             console.error(err);
         }

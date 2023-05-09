@@ -67,22 +67,9 @@ export const ADD_RESPONSE = gql`
 `;
 
 export const REMOVE_ITEM = gql`
-mutation removeItem(
-  $itemId: ID!
-  ) {
-    removeItem(
-      itemText: $itemText, 
-      itemAuthor: $itemAuthor
-    ) {
-      _id
-      itemText
-      itemAuthor
-      createdAt
-      responses {
-        _id
-        responseText
-        createdAt
-      }
-    }
+mutation RemoveItem($itemId: ID!) {
+  removeItem(itemId: $itemId) {
+    _id
   }
+}
 `
