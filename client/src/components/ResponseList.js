@@ -69,7 +69,7 @@ export default function ResponseList ({ responses = [] }) {
                             {response.responseText}
                         </p>
                         <p>
-                            From {response.responseAuthor} onSubmit {response.createdAt}
+                            From {response.responseAuthor} on {response.createdAt}
                         </p>
                         { (getCurrentLoggedInUser() === response.responseAuthor || getCurrentLoggedInUser() === itemAuthor) ? (
                             <>
