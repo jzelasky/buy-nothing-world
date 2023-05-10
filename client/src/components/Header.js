@@ -9,6 +9,7 @@ export default function Header() {
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
+    window.location = '/';
   }
   return (
     <nav className='navbar bg-custom-med text-custom-lt'>
