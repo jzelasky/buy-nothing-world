@@ -42,11 +42,15 @@ const typeDefs = gql`
         login(email: String, password: String!): Auth
         addItem(itemTitle: String!, itemText: String!, itemAuthor: String!): Item
         addResponse(
-            itemId: ID!
-            responseText: String!
+            itemId: ID!,
+            responseText: String!,
             responseAuthor: String!
         ): Item
         removeItem(itemId: ID!): Item
+        removeResponse(
+            itemId: ID!, 
+            responseId: ID!
+        ): Item
     }
 `;
 

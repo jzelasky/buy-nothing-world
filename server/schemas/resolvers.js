@@ -65,6 +65,13 @@ const resolvers = {
                 { $pull: { items: { _id: itemId }}},
                 { new: true }
             )
+        },
+        removeResponse: async (parent, { itemId, responseId }) => {
+            return Item.findOneAndUpdate(
+                { _id: itemId},
+                { $pull: { responses: { _id: responseId }}},
+                { new: true}
+            )
         }
     }
 }

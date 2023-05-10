@@ -36,15 +36,15 @@ export default function SingleItem () {
         }
     }
     
-    let currentUser
     const getCurrentLoggedInUser = () => {
+        let currentUser;
         try {
            currentUser = Auth.getProfile().data.username;
         } catch {
             currentUser = ''
         }
-    }
-    getCurrentLoggedInUser();
+        return currentUser;
+    };
   
     if (loading) {
         return <div>Loading...</div>;
@@ -60,16 +60,13 @@ export default function SingleItem () {
                         <p>{item.itemText}</p>
                         <p>Posted by {item.itemAuthor} on {item.createdAt}.</p>
                     </div>
-                        { (currentUser === item.itemAuthor) ? (
+                        { (getCurrentLoggedInUser() === item.itemAuthor) ? (
                             <>
                                 <button onClick={handleRemoveItem} className='btn m-2'>
                                 Remove Post
                                 </button>
                             </>
-                        ) : (
-                            <>
-                            </>
-                        )}   
+                        ) : (<></>)}   
                 </div>
             </div>
             <div className='m-3'>

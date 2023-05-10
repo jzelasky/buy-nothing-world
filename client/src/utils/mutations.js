@@ -76,3 +76,10 @@ mutation RemoveItem($itemId: ID!) {
   }
 }
 `
+export const REMOVE_RESPONSE = gql`
+mutation RemoveResponse($itemId: ID!, $responseId: ID!) {
+  removeResponse(itemId: $itemId, responseId: $responseId) {
+    _id
+  }
+}
+`
