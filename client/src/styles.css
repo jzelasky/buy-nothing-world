@@ -1,9 +1,9 @@
 /*COLOR SCHEME*/
 :root {
-    --dark-green: #1A2915;
-    --sea-green: #3E885B;
-    --lt-green: #85BDA6;
-    --beige: #F5EDF0;
+    --dark-green: #172a16;
+    --med-green: #355f31;
+    --lt-green: #86be81;
+    --beige: #ecf5eb;
 }
 
 
@@ -12,7 +12,7 @@
     background-color: var(--dark-green);
 }
 .bg-custom-med {
-    background-color: var(--sea-green);
+    background-color: var(--med-green);
 }
 .bg-custom-lt {
     background-color: var(--lt-green);
@@ -47,12 +47,12 @@ p {
 
 /*BUTTON STYLES*/
 .btn {
-    background-color: var(--sea-green);
+    background-color: var(--med-green);
     color: var(--beige);
     box-shadow: 1px 1px 3px var(--dark-green);
 }
 .btn:hover {
-    background-color: var(--sea-green);
+    background-color: var(--med-green);
     color: var(--beige);
     box-shadow: 0 0 0 var(--beige);
 }
