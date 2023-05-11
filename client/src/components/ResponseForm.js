@@ -20,6 +20,7 @@ export default function ResponseForm ({ itemId }) {
                     itemId,
                     responseText,
                     responseAuthor: Auth.getProfile().data.username,
+                    responseEmail: Auth.getProfile().data.email
                 }
             });
             console.log(data);

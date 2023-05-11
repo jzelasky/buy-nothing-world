@@ -50,23 +50,18 @@ export const ADD_ITEM = gql`
 `;
 
 export const ADD_RESPONSE = gql`
-  mutation AddResponse(
-    $itemId: ID!,
-    $responseText: String!,
-    $responseAuthor: String!
-  ) {
-    addResponse(
-      itemId: $itemId,
-      responseText: $responseText,
-      responseAuthor: $responseAuthor
-    ) {
+mutation AddResponse($itemId: ID!, $responseText: String!, $responseAuthor: String!, $responseEmail: String!) {
+  addResponse(itemId: $itemId, responseText: $responseText, responseAuthor: $responseAuthor, responseEmail: $responseEmail) {
+    _id
+    responses {
+      createdAt
       _id
-      itemText
-      responses {
-        responseText
-      }
+      responseText
+      responseEmail
+      responseAuthor
     }
   }
+}
 `;
 
 export const REMOVE_ITEM = gql`

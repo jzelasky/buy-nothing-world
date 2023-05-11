@@ -16,7 +16,7 @@ const resolvers = {
         },
         item: async (parent, { itemId }) => {
             return Item.findOne({ _id: itemId});
-        }
+        },
     },
 
     Mutation: {
@@ -52,10 +52,10 @@ const resolvers = {
 
             return item;
         },
-        addResponse: async (parent, { itemId, responseText, responseAuthor }) => {
+        addResponse: async (parent, { itemId, responseText, responseAuthor, responseEmail }) => {
             return Item.findOneAndUpdate(
                 { _id: itemId },
-                { $addToSet: { responses: { responseText, responseAuthor }}},
+                { $addToSet: { responses: { responseText, responseAuthor, responseEmail }}},
                 { new: true, runValidators: true}, 
             );
         },

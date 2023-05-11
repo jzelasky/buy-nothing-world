@@ -1,16 +1,9 @@
 import { gql } from '@apollo/client';
 
 export const QUERY_USER = gql`
-    query user($username: String!) {
+    query getUser($username: String!) {
         user(username: $username) {
-            _id
-            username
             email
-            items {
-                _id
-                itemText
-                createdAt
-            }
         }
     }
 `;
@@ -39,6 +32,7 @@ export const QUERY_SINGLE_ITEM = gql`
                 _id
                 responseText
                 responseAuthor
+                responseEmail
                 createdAt
             }
         }

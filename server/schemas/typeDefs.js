@@ -22,6 +22,7 @@ const typeDefs = gql`
         _id: ID
         responseText: String
         responseAuthor: String
+        responseEmail: String
         createdAt: String
     }
 
@@ -44,7 +45,8 @@ const typeDefs = gql`
         addResponse(
             itemId: ID!,
             responseText: String!,
-            responseAuthor: String!
+            responseAuthor: String!,
+            responseEmail: String!,
         ): Item
         removeItem(itemId: ID!): Item
         removeResponse(
