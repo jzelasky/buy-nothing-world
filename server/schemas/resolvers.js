@@ -42,8 +42,8 @@ const resolvers = {
 
             return { token, user };
         },
-        addItem: async (parent, { itemText, itemAuthor }) => {
-            const item = await Item.create({ itemText, itemAuthor });
+        addItem: async (parent, { itemTitle, itemText, itemAuthor }) => {
+            const item = await Item.create({ itemTitle, itemText, itemAuthor });
             
             await User.findOneAndUpdate(
                 { username: itemAuthor}, 

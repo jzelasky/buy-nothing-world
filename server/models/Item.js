@@ -8,6 +8,7 @@ const itemSchema = new Schema({
       type: String,
       minlength: 1,
       maxlength: 20,
+      required: true,
       trim: true
     },
     itemText: {
