@@ -16,7 +16,7 @@ const resolvers = {
         },
         item: async (parent, { itemId }) => {
             return Item.findOne({ _id: itemId});
-        },
+        }
     },
 
     Mutation: {
@@ -42,8 +42,8 @@ const resolvers = {
 
             return { token, user };
         },
-        addItem: async (parent, { itemTitle, itemText, itemAuthor }) => {
-            const item = await Item.create({ itemTitle, itemText, itemAuthor });
+        addItem: async (parent, { itemText, itemAuthor }) => {
+            const item = await Item.create({ itemText, itemAuthor });
             
             await User.findOneAndUpdate(
                 { username: itemAuthor}, 
@@ -52,25 +52,18 @@ const resolvers = {
 
             return item;
         },
-        addResponse: async (parent, { itemId, responseText, responseAuthor, responseEmail }) => {
+        addResponse: async (parent, { itemId, responseText, responseAuthor }) => {
             return Item.findOneAndUpdate(
                 { _id: itemId },
-                { $addToSet: { responses: { responseText, responseAuthor, responseEmail }}},
+                { $addToSet: { responses: { responseText, responseAuthor }}},
                 { new: true, runValidators: true}, 
             );
         },
         removeItem: async (parent, { itemId }) => {
-            return Item.findOneAndDelete(
-                { _id: itemId },
-                { $pull: { items: { _id: itemId }}},
-                { new: true }
-            )
-        },
-        removeResponse: async (parent, { itemId, responseId }) => {
             return Item.findOneAndUpdate(
-                { _id: itemId},
-                { $pull: { responses: { _id: responseId }}},
-                { new: true}
+                { _id: itemId },
+                { $pull: { responses: { _id: itemId }}},
+                { new: true }
             )
         }
     }
