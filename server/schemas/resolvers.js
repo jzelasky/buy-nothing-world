@@ -60,10 +60,17 @@ const resolvers = {
             );
         },
         removeItem: async (parent, { itemId }) => {
-            return Item.findOneAndUpdate(
+            return Item.findOneAndDelete(
                 { _id: itemId },
-                { $pull: { responses: { _id: itemId }}},
+                { $pull: { items: { _id: itemId }}},
                 { new: true }
+            )
+        },
+        removeResponse: async (parent, { itemId, responseId }) => {
+            return Item.findOneAndUpdate(
+                { _id: itemId},
+                { $pull: { responses: { _id: responseId }}},
+                { new: true}
             )
         }
     }
