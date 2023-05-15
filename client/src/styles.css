@@ -117,6 +117,10 @@ p {
 .about-margin {
     margin-bottom: 200px;
 }
+.text-custom-about {
+    color: var(--dark-green);
+    font-size: 25px;
+}
 
 /*FOOTER STYLES*/
 .footerStyles {
