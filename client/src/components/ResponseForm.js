@@ -14,13 +14,14 @@ export default function ResponseForm ({ itemId }) {
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
+        console.log(Auth.getProfile().data.email)
         try {
             const { data } = await addResponse({
                 variables: {
                     itemId,
                     responseText,
                     responseAuthor: Auth.getProfile().data.username,
-                    responseEmail: Auth.getProfile().data.email
+                    responseEmail: Auth.getProfile().data.email,
                 }
             });
             console.log(data);
